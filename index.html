@@ -1,1 +1,16 @@
-"site entry file"
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My GitHub Repository</title>
+  </head>
+  <body>
+    <h1>My GitHub Repository</h1>
+    <ul>
+      {% for file in site.static_files %}
+        {% if file.path != "index.html" %}
+          <li><a href="{{ file.path }}">{{ file.path }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </body>
+</html>
